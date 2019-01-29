@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  overflow-x: hidden; }
+
+.no-scroll {
+  overflow: hidden; }
+
+.grid-wrapper {
+  max-width: 800px;
+  margin: 0 auto; }
+  .grid-wrapper .image-grid {
+    display: grid;
+    grid-template-columns: auto auto auto; }
+  .grid-wrapper .grid-item {
+    max-width: auto;
+    border: 1px solid red; }
+    .grid-wrapper .grid-item img {
+      width: 100%;
+      height: 208px;
+      object-fit: cover;
+      transition: all 0.5s; }
+      .grid-wrapper .grid-item img:hover {
+        transform: scale(1.05); }
+
+.divider {
+  height: 20px;
+  background: red; }
+
+.grid-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%; }
+  .grid-overlay .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #0f0e0e;
+    opacity: 0.7; }
+  .grid-overlay .controls {
+    font-size: 44px; }
+    .grid-overlay .controls .next, .grid-overlay .controls .prev {
+      position: absolute;
+      color: white;
+      display: inline-block;
+      width: 30px;
+      height: 20px;
+      top: 50%;
+      text-decoration: none; }
+    .grid-overlay .controls .next {
+      right: 20px; }
+    .grid-overlay .controls .prev {
+      left: 20px; }
+  .grid-overlay .lightbox-image {
+    z-index: 100;
+    transition: all 0.5s;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); }
+    .grid-overlay .lightbox-image img {
+      border-radius: 10px;
+      box-shadow: rgba(0, 0, 0, 0.5) 0 30px 70px -15px, rgba(0, 0, 0, 0.4) 0 4px 20px; }
+  .grid-overlay .close {
+    pointer-events: all;
+    cursor: pointer; }
+    .grid-overlay .close .left-hand, .grid-overlay .close .right-hand {
+      width: 25px;
+      position: absolute;
+      top: 40px;
+      right: 20px;
+      height: 4px;
+      background: white;
+      background: white; }
+    .grid-overlay .close .left-hand {
+      transform: rotate(45deg); }
+    .grid-overlay .close .right-hand {
+      transform: rotate(-45deg); }
+  .grid-overlay .index {
+    position: absolute;
+    left: 20px;
+    top: 20px; }
+
+/*# sourceMappingURL=index.css.map */

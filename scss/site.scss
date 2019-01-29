@@ -1,0 +1,119 @@
+
+* {
+    box-sizing:border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+.no-scroll {
+    overflow: hidden;
+}
+.grid-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    .image-grid {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        
+    }
+    .grid-item {
+        max-width: auto;
+        border: 1px solid red;
+        // grid-column: auto;
+        // grid-row: auto;
+
+        img {
+            width: 100%;
+            height:208px;
+            object-fit: cover;
+            transition: all 0.5s;
+            &:hover {
+                transform: scale(1.05)
+            }
+        }
+    }
+}
+
+.divider {
+    height: 20px;
+    background: red;
+}
+.grid-overlay {
+    position: fixed;
+    top:0;
+    left:0;
+    height: 100vh;
+    width: 100%;
+    .overlay {
+        position: fixed;
+        top:0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #0f0e0e;
+        opacity: 0.7;
+    }
+    .controls {
+        font-size: 44px;
+        .next,.prev {
+            position: absolute;
+            color: white;
+            display: inline-block;
+            width:30px;
+            height:20px;
+            top:50%;
+            text-decoration: none;
+            
+        }
+        .next {
+            right: 20px;
+        }
+        .prev {
+            left:20px;
+        }
+
+    }
+    .lightbox-image {
+        img {
+            border-radius: 10px;
+            box-shadow: rgba(0,0,0,.5) 0 30px 70px -15px, rgba(0,0,0,.4) 0 4px 20px;
+            
+        }
+        z-index:100;
+        transition: all 0.5s;
+        border-radius: 10px;
+        position: absolute;
+        
+        left:50%;
+        top:50%;
+        transform: translate(-50%,-50%);
+    }
+    .close {
+        pointer-events: all;
+        cursor: pointer;
+
+        .left-hand,.right-hand{
+            width: 25px;
+            position: absolute;
+            top:40px;
+            right:20px;
+            height: 4px;
+            background: white;
+            background: white;
+            
+        }
+        .left-hand {
+            transform: rotate(45deg)
+        }
+        .right-hand {
+            transform: rotate(-45deg)
+        }
+    }
+    .index {
+        position: absolute;
+        left:20px;
+        top:20px;
+    }
+}
+
